@@ -17,6 +17,7 @@
         <module>spring-boot-config</module>
         <module>spring-boot-template</module>
         <module>spring-boot-quickstart</module>
+        <module>spring-boot-database</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -45,6 +46,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
 
 
