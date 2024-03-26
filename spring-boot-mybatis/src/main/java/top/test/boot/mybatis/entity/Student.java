@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author 34746
@@ -21,5 +22,7 @@ public class Student {
     private String hometown;
     private LocalDate birthday;
 
+    private Clazz clazz;
 
+    private List<Course> courses;
 }

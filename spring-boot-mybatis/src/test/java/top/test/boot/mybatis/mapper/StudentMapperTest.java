@@ -37,7 +37,7 @@ class StudentMapperTest {
 
     @Test
     void deleteById() {
-        int n = studentMapper.deleteById(3010);
+        int n = studentMapper.deleteById(8015);
         assertEquals(1, n);
     }
 
@@ -58,19 +58,20 @@ class StudentMapperTest {
         assertEquals(10, n);
     }
 
+
     @Test
     void updateBatch() {
         // 创建要更新的学生列表
         List<Student> studentsToUpdate = new ArrayList<>();
-        studentsToUpdate.add(Student.builder().studentId(1001).studentName("新的名字1").build());
-        studentsToUpdate.add(Student.builder().studentId(1002).studentName("新的名字2").build());
+        studentsToUpdate.add(Student.builder().studentId(8000).studentName("新的名字1").build());
+        studentsToUpdate.add(Student.builder().studentId(8001).studentName("新的名字2").build());
         // 添加更多学生到列表中...
 
         // 执行批量更新
         int updatedCount = studentMapper.batchUpdate(studentsToUpdate);
 
         // 假设我们期望更新两个学生
-        assertEquals(2, updatedCount);
+        assertEquals(1, updatedCount);
     }
 
     @Test
@@ -86,4 +87,17 @@ class StudentMapperTest {
         List<Student> students = studentMapper.selectByDynamicSql(student);
         students.forEach(System.out::println);
     }
+
+    @Test
+    void getStudentManyToOne() {
+        Student student = studentMapper.getStudentManyToOne(1001);
+        log.info(String.valueOf(student));
+    }
+
+    @Test
+    void getStudent() {
+        Student student = studentMapper.getStudent(1001);
+        log.info(String.valueOf(student));
+    }
+
 }

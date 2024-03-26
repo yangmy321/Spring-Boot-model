@@ -9,16 +9,13 @@ import java.util.List;
 
 /**
  * @author 34746
- * @description Clazz
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Clazz {
-    private Integer clazzId;
-    private String clazzName;
-    private Integer teacherId;
-    private Teacher teacher;
+public class Course {
+    private Integer courseId;
+    private String courseName;
     private List<Student> students;
 }
