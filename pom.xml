@@ -11,14 +11,17 @@
     <groupId>top.test</groupId>
     <artifactId>spring-boot-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spting-boot-learning</name>
-    <description>spting-boot-learning</description>
+    <name>spring-boot-learning</name>
+    <description>spring-boot-learning</description>
     <modules>
         <module>spring-boot-config</module>
         <module>spring-boot-template</module>
         <module>spring-boot-quickstart</module>
         <module>spring-boot-database</module>
         <module>spring-boot-mybatis</module>
+        <module>spring-boot-log</module>
+        <module>spring-boot-mp</module>
+
     </modules>
 
     <packaging>pom</packaging>
