@@ -1,0 +1,14 @@
+2024-04-08T14:00:22.759+08:00  INFO 8864 --- [main] t.t.boot.exception.ExceptionApplication  : Starting ExceptionApplication using Java 17.0.10 with PID 8864 (D:\ideaCode\spring-boot-learning\spring-boot-exception\target\classes started by 34746 in D:\ideaCode\spring-boot-learning)
+2024-04-08T14:00:22.760+08:00  INFO 8864 --- [main] t.t.boot.exception.ExceptionApplication  : The following 1 profile is active: "dev"
+2024-04-08T14:00:23.104+08:00  WARN 8864 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[top.test.boot.exception]' package. Please check your configuration.
+2024-04-08T14:00:23.308+08:00  INFO 8864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-08T14:00:23.315+08:00  INFO 8864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-08T14:00:23.315+08:00  INFO 8864 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-08T14:00:23.345+08:00  INFO 8864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-08T14:00:23.345+08:00  INFO 8864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 561 ms
+2024-04-08T14:00:23.657+08:00  WARN 8864 --- [main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2024-04-08T14:00:23.701+08:00  INFO 8864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-08T14:00:23.707+08:00  INFO 8864 --- [main] t.t.boot.exception.ExceptionApplication  : Started ExceptionApplication in 1.214 seconds (process running for 1.597)
+2024-04-08T14:30:29.701+08:00  INFO 8864 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-08T14:30:29.702+08:00  INFO 8864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-08T14:30:29.703+08:00  INFO 8864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
