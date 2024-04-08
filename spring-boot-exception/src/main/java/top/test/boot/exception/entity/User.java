@@ -7,6 +7,9 @@ import lombok.Data;
 import top.test.boot.exception.annotation.Phone;
 import top.test.boot.exception.annotation.UserID;
 
+/**
+ * @author 34746
+ */
 @Data
 public class User {
     @NotBlank(message="用户名不能为空")

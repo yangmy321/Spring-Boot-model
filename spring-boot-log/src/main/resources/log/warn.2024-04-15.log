@@ -1,0 +1,2 @@
+2024-04-15 14:12:52,740 [WARN] [main] [36mo.m.s.m.ClassPathMapperScanner[44][0;39m : No MyBatis mapper was found in '[top.test.boot.log]' package. Please check your configuration.
+2024-04-15 14:12:53,315 [WARN] [main] [36mo.s.b.a.f.FreeMarkerAutoConfiguration[65][0;39m : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)

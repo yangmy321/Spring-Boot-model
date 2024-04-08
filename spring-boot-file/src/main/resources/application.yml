@@ -1,0 +1,16 @@
+file:
+  upload-path: D:\ideaCode\spring-boot-learning\spring-boot-file\upload
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static, file:${D:\ideaCode\spring-boot-learning\spring-boot-file\upload}
+  servlet:
+    multipart:
+      max-file-size: 10485760  # 上传文件大小限定为10M
+      max-request-size: 10485760
+
+minio:
+  endPoint: http://43.137.12.232:9000
+  accessKey: admin
+  secretKey: admin123
