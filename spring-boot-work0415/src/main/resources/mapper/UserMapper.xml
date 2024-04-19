@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.test.boot.work0415.mapper.UserMapper">
+<update id="updateUser">
+    UPDATE t_user
+    <set>
+        <if test="name != null">
+            name = #{name},
+        </if>
+<if test="password != null">
+password = #{password},
+</if>
+<if test="sex != null">
+sex = #{sex},
+</if>
+<if test="img != null">
+img = #{img},
+</if>
+</set>
+WHERE id = #{id}
+</update>
+
+<select id="login" parameterType="top.test.boot.work0415.entity.User" resultType="top.test.boot.work0415.entity.User">
+select * from t_user u where u.name = #{name} and u.password = #{password}
+</select>
+<select id="getUsers" resultType="top.test.boot.work0415.entity.User">
+select u.id,u.name,u.sex,u.img from t_user u
+</select>
+<select id="getUserById" resultType="top.test.boot.work0415.entity.User">
+select u.id,u.name,u.password,u.sex,u.img from t_user u where u.id = #{id}
+</select>
+</mapper>
