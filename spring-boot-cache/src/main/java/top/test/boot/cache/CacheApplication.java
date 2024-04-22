@@ -1,4 +1,4 @@
-package top.test.boot.mp;
+package top.test.boot.cache;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author 34746
  */
 @SpringBootApplication
-public class MybatisPlusApplication {
+public class CacheApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MybatisPlusApplication.class,args);
+        SpringApplication.run(CacheApplication.class,args);
     }
 }
