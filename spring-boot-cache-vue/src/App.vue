@@ -3,7 +3,7 @@
     <div v-if="!loggedIn">
       <h1>登陆</h1>
       <input type="text" v-model="phone" placeholder="phone" /><br />
-      <button @click="sendCode">发送验证码</button><br />
+      <button @click="sendCode" :disabled="countdown > 0">{{ countdown > 0 ? countdown + 's后可再次发送' : '发送验证码' }}</button><br />
       <input type="text" v-model="code" placeholder="code" /><br />
       <button @click="login">登陆</button>
     </div>
@@ -21,23 +21,55 @@ export default {
     return {
       phone: '',
       code: '',
-      loggedIn: false
+      loggedIn: false,
+      codeSent: false, // 添加一个标志来跟踪是否已发送验证码
+      codeTimestamp: null, // 保存验证码生成的时间戳
+      countdown: 0 // 倒计时计数
     };
   },
   methods: {
     async sendCode() {
       try {
-        const response = await axios.post('http://localhost:8080/sms/send', {
-          phone: this.phone
-        }, {
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-              }
-            });
-        console.log(response.data);
+        if (this.loggedIn || this.codeSent) {
+          // 如果用户已经登录或者验证码已发送，不需要重新发送验证码
+          return;
+        }
+
+        if (!this.codeTimestamp || this.isCodeExpired()) {
+          // 如果没有生成验证码或者验证码已过期，则生成新的验证码
+          const response = await axios.post('http://localhost:8080/sms/send', {
+            phone: this.phone
+          }, {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          });
+          console.log(response.data);
+          this.codeSent = true; // 标记验证码已发送
+          this.codeTimestamp = Date.now(); // 保存生成验证码的时间戳
+
+          // 开始倒计时
+          this.startCountdown();
+        }
       } catch (error) {
         console.error(error);
       }
+    },
+    isCodeExpired() {
+      const expirationTime = 60 * 1000; // 1分钟的有效期
+      return (Date.now() - this.codeTimestamp) > expirationTime;
+    },
+    startCountdown() {
+      this.countdown = 60; // 设置倒计时为60秒
+
+      // 每秒减少1秒，直到倒计时结束
+      const timer = setInterval(() => {
+        if (this.countdown > 0) {
+          this.countdown--;
+        } else {
+          clearInterval(timer); // 停止计时器
+        }
+      }, 1000);
     },
     async login() {
       try {
