@@ -91,11 +91,11 @@ export default {
 /* 主要容器样式 */
 #app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh; /* 让容器铺满整个视口高度 */
   font-family: Arial, sans-serif;
-  text-align: center;
 }
 
 /* 标题样式 */
@@ -133,6 +133,7 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 10px; /* 增加按钮之间的间距 */
 }
 
 .button:hover {
@@ -146,6 +147,7 @@ input[type="text"] {
   border-radius: 5px;
   border: 1px solid #ccc;
   width: 200px;
+  margin-bottom: 10px; /* 增加输入框之间的间距 */
 }
 
 /* 提示信息样式 */
@@ -155,6 +157,13 @@ input[type="text"] {
 
 .error {
   color: #dc3545;
+}
+
+/* 倒计时文本框样式 */
+.countdown {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px; /* 调整倒计时文本框与按钮的间距 */
 }
 
 </style>
